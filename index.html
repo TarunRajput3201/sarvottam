@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvottam Dairy | Pure. Fresh. Timeless.</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #1e3a8a;
+            --accent: #d4af37;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdfdfd;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center">
+                    <i class="fas fa-droplet text-white"></i>
+                </div>
+                <span class="text-2xl font-serif font-bold tracking-tight text-blue-900">SARVOTTAM</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#home" class="hover:text-blue-700 transition">Home</a>
+                <a href="#products" class="hover:text-blue-700 transition">Products</a>
+                <a href="#about" class="hover:text-blue-700 transition">Our Story</a>
+                <a href="#contact" class="hover:text-blue-700 transition">Contact</a>
+            </div>
+
+            <button class="bg-blue-900 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-800 transition shadow-lg">
+                Order Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-blue-50">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-white hidden lg:block" style="clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="reveal">
+                <span class="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-bold mb-4">ESTABLISHED 1998</span>
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-6">Purity that <span class="text-blue-900">Nurtures</span> your Family.</h1>
+                <p class="text-xl text-slate-600 mb-8 max-w-lg">Experience the finest organic dairy products sourced directly from our sustainable farms. Freshness delivered to your doorstep every morning.</p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="bg-blue-900 text-white px-8 py-4 rounded-full text-lg font-bold hover:shadow-xl transition flex items-center">
+                        Explore Products <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#about" class="border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-50 transition">
+                        Our Mission
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center space-x-8">
+                    <div>
+                        <p class="text-3xl font-bold text-blue-900">25+</p>
+                        <p class="text-sm text-slate-500">Years of Trust</p>
+                    </div>
+                    <div class="w-px h-10 bg-slate-300"></div>
+                    <div>
+                        <p class="text-3xl font-bold text-blue-900">100%</p>
+                        <p class="text-sm text-slate-500">Organic Milk</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative reveal">
+                <div class="animate-float">
+                    <img src="https://images.unsplash.com/photo-1550583724-125581cc255b?auto=format&fit=crop&q=80&w=800" alt="Fresh Milk" class="rounded-3xl shadow-2xl">
+                </div>
+                <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-blue-50">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                            <i class="fas fa-check-circle fa-2x"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold">Quality Certified</p>
+                            <p class="text-sm text-slate-500">ISO 22000 Standards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Premium Range</h2>
+            <div class="w-24 h-1 bg-blue-900 mx-auto mb-6"></div>
+            <p class="text-slate-600 max-w-2xl mx-auto">From the creamiest milk to the richest ghee, discover products crafted with love and tradition.</p>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card group reveal bg-slate-50 rounded-3xl p-6 transition-all hover:shadow-2xl hover:-translate-y-2">
+                <div class="h-64 mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1563636619-e9107da4a1bb?auto=format&fit=crop&q=80&w=400" alt="Pure Milk" class="product-img w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Farm Fresh Milk</h3>
+                <p class="text-slate-500 mb-4 text-sm">Rich in calcium, vitamin D, and protein. Zero additives.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-blue-900">₹60/L</span>
+                    <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card group reveal bg-slate-50 rounded-3xl p-6 transition-all hover:shadow-2xl hover:-translate-y-2" style="transition-delay: 100ms;">
+                <div class="h-64 mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1634141503790-a35940027f32?auto=format&fit=crop&q=80&w=400" alt="Pure Ghee" class="product-img w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Desi Ghee</h3>
+                <p class="text-slate-500 mb-4 text-sm">Traditional Bilona method. Aromatic and pure golden bliss.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-blue-900">₹650/kg</span>
+                    <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card group reveal bg-slate-50 rounded-3xl p-6 transition-all hover:shadow-2xl hover:-translate-y-2" style="transition-delay: 200ms;">
+                <div class="h-64 mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1552689486-f6773047d19f?auto=format&fit=crop&q=80&w=400" alt="Fresh Paneer" class="product-img w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Fresh Paneer</h3>
+                <p class="text-slate-500 mb-4 text-sm">Extra soft and malai-rich. Made daily for peak freshness.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-blue-900">₹420/kg</span>
+                    <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card group reveal bg-slate-50 rounded-3xl p-6 transition-all hover:shadow-2xl hover:-translate-y-2" style="transition-delay: 300ms;">
+                <div class="h-64 mb-6 overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&q=80&w=400" alt="Thick Curd" class="product-img w-full h-full object-cover transition-transform duration-500">
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Thick Curd</h3>
+                <p class="text-slate-500 mb-4 text-sm">Natural, probiotic-rich curd with a silky texture.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-blue-900">₹80/kg</span>
+                    <button class="bg-blue-900 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-accent transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-blue-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 opacity-10 pointer-events-none">
+            <i class="fas fa-cow text-[400px]"></i>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=800" alt="Our Farm" class="rounded-3xl shadow-2xl border-8 border-white/10">
+            </div>
+            <div class="reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Serving Purity Since 1998</h2>
+                <p class="text-blue-100 text-lg mb-6 leading-relaxed">
+                    Sarvottam Dairy was founded on a simple principle: Milk should be as pure as nature intended. For over two decades, we've partnered with local farmers who share our commitment to ethical dairy farming and sustainable practices.
+                </p>
+                <div class="grid grid-cols-2 gap-6 mb-10">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-leaf text-accent text-xl"></i>
+                        <div>
+                            <h4 class="font-bold">Organic Feed</h4>
+                            <p class="text-sm text-blue-200">100% Pesticide-free fodder.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-temperature-low text-accent text-xl"></i>
+                        <div>
+                            <h4 class="font-bold">Cold Chain</h4>
+                            <p class="text-sm text-blue-200">Strict temperature control.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition">
+                    Learn Our Process
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Interactive Steps -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">Why Choose Sarvottam?</h2>
+                <p class="text-slate-500">The journey of every drop of milk matters.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center reveal">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Freshness First</h3>
+                    <p class="text-slate-600">Milk reach your doorstep within 3-5 hours of milking to ensure maximum nutrition.</p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 150ms;">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fas fa-flask-vial"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Quality Checks</h3>
+                    <p class="text-slate-600">Every batch undergoes 27+ quality tests in our lab before it's approved for packaging.</p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 300ms;">
+                    <div class="w-20 h-20 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Eco-Friendly</h3>
+                    <p class="text-slate-600">We use recyclable packaging and electric delivery fleets to reduce our carbon footprint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-serif text-center mb-16">Trusted by 10,000+ Families</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm reveal">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-slate-600 mb-6">"The milk quality is outstanding. It reminds me of the fresh milk we used to get in our village. Truly Sarvottam!"</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                        </div>
+                        <div>
+                            <p class="font-bold">Anjali Sharma</p>
+                            <p class="text-sm text-slate-500">Homemaker</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm reveal" style="transition-delay: 100ms;">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-slate-600 mb-6">"The Bilona Ghee is so aromatic. It has transformed my cooking. Highly recommended for anyone seeking purity."</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                        </div>
+                        <div>
+                            <p class="font-bold">Rajesh Mehra</p>
+                            <p class="text-sm text-slate-500">Chef</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm reveal" style="transition-delay: 200ms;">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic text-slate-600 mb-6">"Excellent service and punctuality. The delivery is always on time and the paneer is the softest I've ever had."</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="User">
+                        </div>
+                        <div>
+                            <p class="font-bold">Siddharth V.</p>
+                            <p class="text-sm text-slate-500">Fitness Trainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Newsletter -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-blue-50 rounded-[3rem] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">Subscribe to Freshness</h2>
+                    <p class="text-slate-600 mb-8 text-lg">Get daily updates on products and exclusive seasonal offers directly to your inbox.</p>
+                    <form class="flex flex-col md:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-1 px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-blue-900 outline-none">
+                        <button class="bg-blue-900 text-white px-8 py-4 rounded-full font-bold hover:shadow-lg transition">Subscribe Now</button>
+                    </form>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-blue-900 mb-4 uppercase tracking-widest text-sm">Contact Us</h4>
+                        <p class="text-slate-600">123 Dairy Lane, Green Meadows</p>
+                        <p class="text-slate-600">+91 98765 43210</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-blue-900 mb-4 uppercase tracking-widest text-sm">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition shadow-sm"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition shadow-sm"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-900 hover:bg-blue-900 hover:text-white transition shadow-sm"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:row justify-between items-center text-slate-500 text-sm">
+            <div class="mb-6 md:mb-0">
+                <p>&copy; 2024 Sarvottam Dairy Products Pvt Ltd. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-8">
+                <a href="#" class="hover:text-blue-900">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-900">Terms of Service</a>
+                <a href="#" class="hover:text-blue-900">Returns</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'shadow-md');
+            }
+        });
+
+        // Add to cart interaction
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(this.innerText === '' || this.querySelector('.fa-plus')) {
+                   const icon = this.querySelector('i');
+                   if(icon) {
+                       icon.classList.remove('fa-plus');
+                       icon.classList.add('fa-check');
+                       this.classList.replace('bg-blue-900', 'bg-green-600');
+                       setTimeout(() => {
+                           icon.classList.replace('fa-check', 'fa-plus');
+                           this.classList.replace('bg-green-600', 'bg-blue-900');
+                       }, 2000);
+                   }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
